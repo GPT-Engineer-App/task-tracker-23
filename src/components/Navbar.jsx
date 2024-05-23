@@ -1,23 +1,28 @@
-import { Box, Flex, Link, Spacer, Text } from "@chakra-ui/react";
-import { NavLink } from "react-router-dom";
+import { Box, Flex, Text, Link, Spacer } from "@chakra-ui/react";
+import { Link as RouterLink } from "react-router-dom";
 
-const Navbar = () => (
-  <Box bg="teal.500" p={4}>
-    <Flex maxW="container.lg" mx="auto" align="center">
-      <Text fontSize="xl" fontWeight="bold" color="white">
-        Todo App
-      </Text>
-      <Spacer />
-      <Flex>
-        <Link as={NavLink} to="/" p={2} color="white" _hover={{ textDecoration: "none", bg: "teal.600" }} _activeLink={{ bg: "teal.700" }}>
-          Home
-        </Link>
-        <Link as={NavLink} to="/about" p={2} color="white" _hover={{ textDecoration: "none", bg: "teal.600" }} _activeLink={{ bg: "teal.700" }}>
-          About
-        </Link>
+const Navbar = () => {
+  return (
+    <Box bg="teal.500" px={4} py={2}>
+      <Flex align="center">
+        <Text fontSize="xl" fontWeight="bold" color="white">
+          Todo App
+        </Text>
+        <Spacer />
+        <Flex>
+          <Link as={RouterLink} to="/" color="white" mx={2}>
+            Home
+          </Link>
+          <Link as={RouterLink} to="/about" color="white" mx={2}>
+            About
+          </Link>
+          <Link as={RouterLink} to="/contact" color="white" mx={2}>
+            Contact
+          </Link>
+        </Flex>
       </Flex>
-    </Flex>
-  </Box>
-);
+    </Box>
+  );
+};
 
 export default Navbar;
