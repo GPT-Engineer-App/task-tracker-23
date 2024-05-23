@@ -42,7 +42,8 @@ const Index = () => {
   };
 
   return (
-    <Container centerContent maxW="container.md" p={4}>
+    <Flex direction="column" minHeight="100vh">
+      <Container centerContent maxW="container.md" p={4} flex="1">
       <VStack spacing={4} w="100%">
         <Heading as="h1" size="2xl" mb={4}>Todo App</Heading>
         {quote && (
@@ -77,8 +78,9 @@ const Index = () => {
           ))}
         </VStack>
       </VStack>
+      </Container>
       <Footer />
-    </Container>
+    </Flex>
   );
 };
 
