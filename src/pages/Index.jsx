@@ -57,6 +57,11 @@ const Index = () => {
               placeholder="Add a new task" 
               value={newTask} 
               onChange={(e) => setNewTask(e.target.value)} 
+              onKeyPress={(e) => {
+                if (e.key === "Enter") {
+                  addTask();
+                }
+              }}
             />
             <Button onClick={addTask} colorScheme="teal">Add Task</Button>
           </HStack>
