@@ -1,10 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Container, VStack, HStack, Input, Button, Checkbox, Text, IconButton, Heading, Box, Flex } from "@chakra-ui/react";
 import { FaTrash } from "react-icons/fa";
 
 const Index = () => {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
+
+  const [quote, setQuote] = useState("");
+
+  useEffect(() => {
+    fetchRandomQuote();
+  }, []);
+
+  const fetchRandomQuote = async () => {
+    try {
+      const response = await fetch("https://api.quotable.io/random");
+      const data = await response.json();
+      setQuote(data.content);
+    } catch (error) {
+      console.error("Error fetching the quote: ", error);
+    }
+  };
 
   const addTask = () => {
     if (newTask.trim() !== "") {
@@ -29,6 +45,11 @@ const Index = () => {
     <Container centerContent maxW="container.md" p={4}>
       <VStack spacing={4} w="100%">
         <Heading as="h1" size="2xl" mb={4}>Todo App</Heading>
+        {quote && (
+          <Box bg="teal.100" p={4} borderRadius="md" w="100%">
+            <Text fontSize="lg" textAlign="center">"{quote}"</Text>
+          </Box>
+        )}
         <HStack w="100%">
           <Input 
             placeholder="Add a new task" 
