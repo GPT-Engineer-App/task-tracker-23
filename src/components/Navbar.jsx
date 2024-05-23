@@ -3,7 +3,7 @@ import { Link as RouterLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <Box bg="teal.500" px={4} py={2}>
+    <Box bg="brand.700" px={4} py={2}>
       <Flex align="center">
         <Text fontSize="xl" fontWeight="bold" color="white">
           Todo App

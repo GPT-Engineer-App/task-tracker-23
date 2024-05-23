@@ -35,7 +35,7 @@ const Index = () => {
             value={newTask} 
             onChange={(e) => setNewTask(e.target.value)} 
           />
-          <Button onClick={addTask} colorScheme="teal">Add Task</Button>
+          <Button onClick={addTask} colorScheme="brand">Add Task</Button>
         </HStack>
         <VStack w="100%" spacing={3} mt={4}>
           {tasks.map((task, index) => (
@@ -62,7 +62,7 @@ const Index = () => {
 };
 
 const Footer = () => (
-  <Box as="footer" w="100%" p={4} bg="gray.200" textAlign="center">
+  <Box as="footer" w="100%" p={4} bg="brand.100" textAlign="center">
     <Text>© 2023 Todo App</Text>
   </Box>
 );
