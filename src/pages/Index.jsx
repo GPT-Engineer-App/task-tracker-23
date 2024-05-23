@@ -46,8 +46,9 @@ const Index = () => {
       <VStack spacing={4} w="100%">
         <Heading as="h1" size="2xl" mb={4}>Todo App</Heading>
         {quote && (
-          <Box bg="teal.100" p={4} borderRadius="md" w="100%">
-            <Text fontSize="lg" textAlign="center">"{quote}"</Text>
+          <Box bg="teal.100" p={4} borderRadius="md" w="100%" textAlign="center">
+            <Text fontSize="lg">"{quote}"</Text>
+            <Button mt={2} colorScheme="teal" onClick={fetchRandomQuote}>Refresh Quote</Button>
           </Box>
         )}
         <HStack w="100%">
