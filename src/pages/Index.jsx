@@ -42,7 +42,7 @@ const Index = () => {
   };
 
   return (
-    <Flex direction="column" minHeight="100vh">
+    <Flex direction="column" minHeight="calc(100vh - 64px - 64px)">
       <Container centerContent maxW="container.md" p={4} flex="1">
         <VStack spacing={4} w="100%">
           <Heading as="h1" size="2xl" mb={4}>Todo App</Heading>
@@ -86,7 +86,7 @@ const Index = () => {
 };
 
 const Footer = () => (
-  <Box as="footer" w="100%" p={4} bg="gray.200" textAlign="center">
+  <Box as="footer" w="100%" p={4} bg="gray.200" textAlign="center" mt="auto">
     <Text>© 2023 Todo App</Text>
   </Box>
 );
